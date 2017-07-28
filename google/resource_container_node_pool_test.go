@@ -145,6 +145,7 @@ func testAccCheckContainerNodePoolMatches(n string) resource.TestCheckFunc {
 
 		nodepoolTests := []nodepoolTestField{
 			{"initial_node_count", strconv.FormatInt(nodepool.InitialNodeCount, 10)},
+			{"instance_group_urls", nodepool.InstanceGroupUrls},
 			{"node_config.0.machine_type", nodepool.Config.MachineType},
 			{"node_config.0.disk_size_gb", strconv.FormatInt(nodepool.Config.DiskSizeGb, 10)},
 			{"node_config.0.local_ssd_count", strconv.FormatInt(nodepool.Config.LocalSsdCount, 10)},

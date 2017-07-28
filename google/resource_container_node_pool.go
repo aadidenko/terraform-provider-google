@@ -93,6 +93,12 @@ func resourceContainerNodePool() *schema.Resource {
 					},
 				},
 			},
+
+			"instance_group_urls": {
+				Type:     schema.TypeList,
+				Computed: true,
+				Elem:     &schema.Schema{Type: schema.TypeString},
+			},
 		},
 	}
 }
@@ -250,6 +256,8 @@ func resourceContainerNodePoolRead(d *schema.ResourceData, meta interface{}) err
 		}
 	}
 	d.Set("autoscaling", autoscaling)
+
+	d.Set("instance_group_urls", nodePool.InstanceGroupUrls)
 
 	return nil
 }

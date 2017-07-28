@@ -111,3 +111,11 @@ The `autoscaling` block supports:
     <= `maxNodeCount`.
 
 * `maxNodeCount` - (Required) Maximum number of nodes in the NodePool. Must be >= minNodeCount.
+
+## Attributes Reference
+
+In addition to the arguments listed above, the following computed attributes are
+exported:
+
+* `instance_group_urls` - List of instance group URLs which have been assigned
+    to the node pool
